@@ -1,0 +1,40 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+target/
+*.log
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+.mvn/
+target/
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Spring Boot specific files
+*.jar
+*.war
+*.ear
+
+# Application-specific
+.env
+*.properties
+
+# Node.js (if applicable)
+node_modules/
+package-lock.json
+yarn.lock
