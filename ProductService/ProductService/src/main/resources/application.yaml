@@ -1,5 +1,5 @@
 server:
-  port:8080
+  port: 8081
 
 spring:
   datasource:
@@ -18,12 +18,15 @@ spring:
   application:
     name: PRODUCT-SERVICE
 
-eureka:
-  client:
-    instance:
-      hostname: localhost  # Explicitly set the hostname to localhost
-      prefer-ip-address: false
-    service-url:
-      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka}  # Eureka Server URL (uses environment variable EUREKA_SERVER_URL if available)
-    fetch-registry: true  # Allows the client to fetch the service registry from Eureka Server
-    register-with-eureka: true
+  config:
+    import: configserver:http://localhost:9296
+
+#eureka:
+#  client:
+#    instance:
+#      hostname: localhost   Explicitly set the hostname to localhost
+#      prefer-ip-address: false
+#    service-url:
+#      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka}   Eureka Server URL (uses environment variable EUREKA_SERVER_URL if available)
+#    fetch-registry: true   Allows the client to fetch the service registry from Eureka Server
+#    register-with-eureka: true
