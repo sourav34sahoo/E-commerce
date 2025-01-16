@@ -57,7 +57,7 @@ public class ProductServiceImpl implements ProductService{
 
         if (product.getQuantity() < quantity) {
             throw new ProductServiceCustomException(
-                    "product doesnot have enough quantity",
+                    "Product Doesn't have Enough Quantity",
                     "INSUFFICIENT_STOCK");
         }
 
