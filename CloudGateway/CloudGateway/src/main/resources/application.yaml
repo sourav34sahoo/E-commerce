@@ -5,7 +5,7 @@ spring:
   application:
     name: API-GATEWAY
   config:
-    import: configserver:http://localhost:9296 # Make sure this is working or adjust as necessary
+    import: configserver:http://localhost:9296  # Ensure this is accessible
   cloud:
     gateway:
       routes:
@@ -21,8 +21,12 @@ spring:
           uri: lb://PRODUCT-SERVICE
           predicates:
             - Path=/product/**
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
